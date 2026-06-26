@@ -1,19 +1,3 @@
-<p align="center">
-</p>
-
-<p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey.svg" alt="License CC BY-NC-SA 4.0"></a>
-  <a href="#"><img src="https://img.shields.io/badge/semanas-16-yellow.svg" alt="16 Semanas"></a>
-  <a href="#"><img src="https://img.shields.io/badge/horas-128-orange.svg" alt="128 Horas"></a>
-  <a href="#"><img src="https://img.shields.io/badge/Node.js-68A063?logo=nodedotjs&logoColor=white" alt="Node.js"></a>
-  <a href="#"><img src="https://img.shields.io/badge/Express-000000?logo=express&logoColor=white" alt="Express"></a>
-</p>
-
-<p align="center">
-</p>
-
----
-
 ## 📋 Descripción
 
 Bootcamp intensivo de **16 semanas (~4 meses)** enfocado en el dominio de **Express.js** y el desarrollo de APIs REST modernas con Node.js. Diseñado para llevar a desarrolladores con experiencia en JavaScript/TypeScript hasta **Desarrollador Backend Junior**, con énfasis en código limpio, mejores prácticas y APIs listas para producción.

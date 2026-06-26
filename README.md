@@ -1,7 +1,7 @@
 # 🏛️ Proyecto Semanal – API REST con Express
 
-**Bootcamp:** bc-expressjs
-**Estudiante:** Tomas Cañón
+Bootcamp: bc-expressjs
+Estudiante: Tomas Cañón
 
 ---
 
@@ -31,50 +31,21 @@ Aplicar los fundamentos de Express.js para:
 
 Representa un evento producido por la empresa.
 
-| Campo       | Tipo                  | Descripción                      |
-| ----------- | --------------------- | -------------------------------- |
-| id          | number / ObjectId     | Identificador único              |
-| title       | string                | Nombre del evento                |
-| description | string (opcional)     | Descripción del evento           |
-| date        | string                | Fecha del evento                 |
-| location    | string                | Ubicación del evento             |
-| category    | string                | Categoría (Música, Gastronomía…) |
-| price       | number                | Precio de entrada                |
-| capacity    | number                | Capacidad máxima                 |
-| staff       | ObjectId (ref Staff)  | Staff asignado al evento         |
+Campos: id, title, description, date, location, category, price, capacity, staff
 
 ### 👤 Staff
 
 Representa el personal que trabaja en los eventos.
 
-| Campo  | Tipo              | Descripción                 |
-| ------ | ----------------- | --------------------------- |
-| id     | ObjectId          | Identificador único         |
-| name   | string            | Nombre del miembro          |
-| role   | string            | Rol (Fotógrafo, Chef, etc.) |
-| phone  | string (opcional) | Teléfono de contacto        |
-| email  | string (opcional) | Correo electrónico (único)  |
+Campos: id, name, role, phone, email
 
 ---
 
-## 📐 Arquitectura
+## 🏷️ Tipado del Dominio
 
-El proyecto sigue una arquitectura en capas (`controller → service → repository`), implementada progresivamente a lo largo de las semanas del bootcamp.
-
-```
-src/
-├── app.ts                  # Configuración de Express
-├── server.ts               # Punto de entrada
-├── controllers/            # Manejadores HTTP (req/res)
-├── services/               # Lógica de negocio
-├── repositories/           # Acceso a datos
-├── schemas/                # Validación con Zod
-├── models/                 # Modelos de Mongoose
-├── middlewares/             # Middleware personalizado
-├── errors/                 # Clase AppError
-├── lib/                    # Conexión a base de datos
-└── seed.ts                 # Datos de prueba
-```
+Se usa la interfaz `IEvent` e `IStaff` con tipos explícitos.
+El campo `status` usa un type union con valores:
+- upcoming | ongoing | completed | cancelled
 
 ---
 
@@ -82,10 +53,34 @@ src/
 
 - CRUD completo de eventos y staff
 - Validación de datos con Zod
-- Paginación, búsqueda por título
+- Paginación y búsqueda por título
 - Manejo de errores con AppError (400, 404, 409, 500)
 - Población de referencias (populate en Mongoose)
 - Seed con datos de prueba
+
+---
+
+## 📂 Estructura del Proyecto
+
+```
+├── package.json
+├── tsconfig.json
+├── docker-compose.yml
+├── .env
+├── README.md
+└── src/
+    ├── app.ts
+    ├── server.ts
+    ├── seed.ts
+    ├── controllers/
+    ├── services/
+    ├── repositories/
+    ├── schemas/
+    ├── models/
+    ├── middlewares/
+    ├── errors/
+    └── lib/
+```
 
 ---
 
@@ -95,27 +90,3 @@ src/
 pnpm install
 pnpm run dev
 ```
-
-### Seed de datos
-
-```bash
-pnpm run seed
-```
-
----
-
-## 📡 Endpoints
-
-| Método | Ruta                  | Descripción              |
-| ------ | --------------------- | ------------------------ |
-| GET    | `/health`             | Health check             |
-| GET    | `/api/v1/events`      | Listar eventos           |
-| GET    | `/api/v1/events/:id`  | Obtener evento por ID    |
-| POST   | `/api/v1/events`      | Crear evento             |
-| PUT    | `/api/v1/events/:id`  | Actualizar evento        |
-| DELETE | `/api/v1/events/:id`  | Eliminar evento          |
-| GET    | `/api/v1/staff`       | Listar staff             |
-| GET    | `/api/v1/staff/:id`   | Obtener staff por ID     |
-| POST   | `/api/v1/staff`       | Crear staff              |
-| PUT    | `/api/v1/staff/:id`   | Actualizar staff         |
-| DELETE | `/api/v1/staff/:id`   | Eliminar staff           |

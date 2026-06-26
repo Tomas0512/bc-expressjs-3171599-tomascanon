@@ -1,5 +1,4 @@
 <p align="center">
-  <img src="assets/bootcamp-header.svg" alt="Bootcamp ExpressJS Zero to Hero" width="800">
 </p>
 
 <p align="center">
@@ -11,7 +10,6 @@
 </p>
 
 <p align="center">
-  <a href="README_EN.md"><img src="https://img.shields.io/badge/🇺🇸_English-0969DA?style=for-the-badge&logoColor=white" alt="English Version"></a>
 </p>
 
 ---
